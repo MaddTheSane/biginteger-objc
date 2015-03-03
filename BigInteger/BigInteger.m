@@ -152,7 +152,6 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 
 	if (k >= n)
 	{
-		[self autorelease];
 		return nil;
 	}
 	
@@ -196,7 +195,6 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 		}
 		else
 		{
-			[self autorelease];
 			return nil;
 		}
 		
@@ -264,7 +262,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	// The class being immutable, do not create an
 	// actual copy and simply return self.
 
-	return [self retain];
+	return self;
 }
 
 //--------------------------------------------------------------
@@ -274,7 +272,6 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 - (void)dealloc
 {
 	bigint_free(&bn);
-	[super dealloc];
 }
 
 //--------------------------------------------------------------
@@ -360,7 +357,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 
 + (BigInteger *)bigintWithInt32:(int32_t)x
 {
-	return [[[BigInteger alloc] initWithInt32:x] autorelease];
+	return [[BigInteger alloc] initWithInt32:x];
 }
 
 //--------------------------------------------------------------
@@ -370,7 +367,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 
 + (BigInteger *)bigintWithUnsignedInt32:(uint32_t)x
 {
-	return [[[BigInteger alloc] initWithUnsignedInt32:x] autorelease];
+	return [[BigInteger alloc] initWithUnsignedInt32:x];
 }
 
 //--------------------------------------------------------------
@@ -379,7 +376,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 
 + (BigInteger *)bigintWithBigInteger:(BigInteger *)bigint
 {
-	return [[[BigInteger alloc] initWithBigInteger:bigint] autorelease];
+	return [[BigInteger alloc] initWithBigInteger:bigint];
 }
 
 //--------------------------------------------------------------
@@ -389,7 +386,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 
 + (BigInteger *)bigintWithString:(NSString *)num radix:(int)radix
 {
-	return [[[BigInteger alloc] initWithString:num radix:radix] autorelease];
+	return [[BigInteger alloc] initWithString:num radix:radix];
 }
 
 //--------------------------------------------------------------
@@ -399,7 +396,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 
 + (BigInteger *)bigintWithRandomNumberOfSize:(int)bitcount exact:(BOOL)exact
 {
-	return [[[BigInteger alloc] initWithRandomNumberOfSize:bitcount exact:exact] autorelease];
+	return [[BigInteger alloc] initWithRandomNumberOfSize:bitcount exact:exact];
 }
 
 //--------------------------------------------------------------
@@ -432,7 +429,6 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	// Trim spaces and return the result.
 
 	NSString * ret = [buf stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-	[buf release];
 	return ret;
 }
 
@@ -652,7 +648,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 		// The receiver is negative. Copy it and cancel
 		// its sign bit.
 
-		r = [[[BigInteger alloc] initWithBigInteger:self] autorelease];
+		r = [[BigInteger alloc] initWithBigInteger:self];
 		r->bn.sign = NO;
 	}
 	else
@@ -674,7 +670,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 {
 	BigInteger * r = [[BigInteger alloc] initWithBigInteger:self];
 	r->bn.sign = !bn.sign;
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -719,7 +715,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * r = [[BigInteger alloc] init];
 	bigint_add(&r->bn, &bn, &x->bn);
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -733,7 +729,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * r = [[BigInteger alloc] init];
 	bigint_sub(&r->bn, &bn, &x->bn);
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -747,7 +743,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * r = [[BigInteger alloc] init];
 	bigint_multiply(&r->bn, &bn, &mul->bn);
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -779,7 +775,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 
 	// Return the result.
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -795,7 +791,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * q = [[BigInteger alloc] init];
 	bigint_divide(&bn, &div->bn, &q->bn, NULL);
 
-	return [q autorelease];
+	return q;
 }
 
 //--------------------------------------------------------------
@@ -811,14 +807,14 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BIGINT * r = NULL;
 	if (rem)
 	{
-		*rem = [[[BigInteger alloc] init] autorelease];
+		*rem = [[BigInteger alloc] init];
 		r = &(*rem)->bn;
 	}
 
 	BigInteger * q = [[BigInteger alloc] init];
 	bigint_divide(&bn, &div->bn, &q->bn, r);
 
-	return [q autorelease];
+	return q;
 }
 
 //--------------------------------------------------------------
@@ -830,7 +826,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * r = [[BigInteger alloc] init];
 	bigint_exp(&r->bn, &bn, exp);
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -856,7 +852,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 
 	// Return the result.
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -870,7 +866,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * r = [[BigInteger alloc] init];
 	bigint_shift_left(&r->bn, &bn, count);
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -884,7 +880,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * r = [[BigInteger alloc] init];
 	bigint_shift_right(&r->bn, &bn, count);
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -907,7 +903,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * r = [[BigInteger alloc] init];
 	bigint_not(&r->bn, &bn, count);
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -921,7 +917,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * r = [[BigInteger alloc] init];
 	bigint_and(&r->bn, &bn, &x->bn);
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -935,7 +931,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * r = [[BigInteger alloc] init];
 	bigint_or(&r->bn, &bn, &x->bn);
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -949,7 +945,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	BigInteger * r = [[BigInteger alloc] init];
 	bigint_xor(&r->bn, &bn, &x->bn);
 
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
@@ -971,7 +967,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 
 	// Return the result.
 
-	return [d autorelease];
+	return d;
 }
 
 //--------------------------------------------------------------
@@ -996,7 +992,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 		// The GCD is equal to 1, so the modular inverse
 		// exists. Return it.
 
-		r = [[[BigInteger alloc] init] autorelease];
+		r = [[BigInteger alloc] init];
 		memcpy(&r->bn, &x, sizeof(BIGINT));
 
 		// If the result is negative, add the modulus to
@@ -1070,7 +1066,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	// result.
 
 	r->bn.sign = bn.sign;
-	return [r autorelease];
+	return r;
 }
 
 //--------------------------------------------------------------
