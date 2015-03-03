@@ -79,7 +79,20 @@
 		55D5993D1AA560CE00F9AA29 /* BigInteger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5050C7E916D50414009B4D06 /* BigInteger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55D599421AA561BF00F9AA29 /* private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5050C7E816D50414009B4D06 /* private.h */; };
 		55D599461AA5648200F9AA29 /* BigInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D599451AA5648200F9AA29 /* BigInteger.swift */; };
+		55D599501AA5760300F9AA29 /* BigInteger_MacOSX_Framework_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D5994F1AA5760300F9AA29 /* BigInteger_MacOSX_Framework_Tests.m */; };
+		55D599511AA5760300F9AA29 /* BigInteger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D599411AA560CE00F9AA29 /* BigInteger.framework */; };
+		55D599581AA5786900F9AA29 /* BISwiftTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D599571AA5786900F9AA29 /* BISwiftTesting.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55D599521AA5760300F9AA29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5050C7CF16D50359009B4D06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55D5992C1AA560CE00F9AA29;
+			remoteInfo = "BigInteger-MacOSX Framework";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5050C7D516D50359009B4D06 /* CopyFiles */ = {
@@ -131,6 +144,10 @@
 		55D599411AA560CE00F9AA29 /* BigInteger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigInteger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D599431AA561E900F9AA29 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Property List.plist"; path = "Resources/Property List.plist"; sourceTree = "<group>"; };
 		55D599451AA5648200F9AA29 /* BigInteger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInteger.swift; sourceTree = "<group>"; };
+		55D5994B1AA5760300F9AA29 /* BigInteger-MacOSX Framework Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BigInteger-MacOSX Framework Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D5994E1AA5760300F9AA29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55D5994F1AA5760300F9AA29 /* BigInteger_MacOSX_Framework_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BigInteger_MacOSX_Framework_Tests.m; sourceTree = "<group>"; };
+		55D599571AA5786900F9AA29 /* BISwiftTesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BISwiftTesting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +183,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55D599481AA5760300F9AA29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55D599511AA5760300F9AA29 /* BigInteger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -173,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				5050C7DC16D50359009B4D06 /* BigInteger */,
+				55D5994C1AA5760300F9AA29 /* BigInteger-MacOSX Framework Tests */,
 				5050C7D916D50359009B4D06 /* Frameworks */,
 				5050C7D816D50359009B4D06 /* Products */,
 			);
@@ -185,6 +211,7 @@
 				5075828C16DB99B10029EA54 /* libBigInteger-iOS.a */,
 				5088186D16EA7BC90071AE16 /* libBigInteger-MacOSX.a */,
 				55D599411AA560CE00F9AA29 /* BigInteger.framework */,
+				55D5994B1AA5760300F9AA29 /* BigInteger-MacOSX Framework Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,6 +283,24 @@
 				5088187316EA7BC90071AE16 /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		55D5994C1AA5760300F9AA29 /* BigInteger-MacOSX Framework Tests */ = {
+			isa = PBXGroup;
+			children = (
+				55D599571AA5786900F9AA29 /* BISwiftTesting.swift */,
+				55D5994F1AA5760300F9AA29 /* BigInteger_MacOSX_Framework_Tests.m */,
+				55D5994D1AA5760300F9AA29 /* Supporting Files */,
+			);
+			path = "BigInteger-MacOSX Framework Tests";
+			sourceTree = "<group>";
+		};
+		55D5994D1AA5760300F9AA29 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55D5994E1AA5760300F9AA29 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +395,24 @@
 			productReference = 55D599411AA560CE00F9AA29 /* BigInteger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		55D5994A1AA5760300F9AA29 /* BigInteger-MacOSX Framework Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55D599541AA5760300F9AA29 /* Build configuration list for PBXNativeTarget "BigInteger-MacOSX Framework Tests" */;
+			buildPhases = (
+				55D599471AA5760300F9AA29 /* Sources */,
+				55D599481AA5760300F9AA29 /* Frameworks */,
+				55D599491AA5760300F9AA29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55D599531AA5760300F9AA29 /* PBXTargetDependency */,
+			);
+			name = "BigInteger-MacOSX Framework Tests";
+			productName = "BigInteger-MacOSX Framework Tests";
+			productReference = 55D5994B1AA5760300F9AA29 /* BigInteger-MacOSX Framework Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -358,6 +421,11 @@
 			attributes = {
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Æquans";
+				TargetAttributes = {
+					55D5994A1AA5760300F9AA29 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
 			};
 			buildConfigurationList = 5050C7D216D50359009B4D06 /* Build configuration list for PBXProject "BigInteger" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -376,12 +444,20 @@
 				5088186C16EA7BC90071AE16 /* BigInteger-MacOSX */,
 				507582BF16DBC2550029EA54 /* UniLib */,
 				55D5992C1AA560CE00F9AA29 /* BigInteger-MacOSX Framework */,
+				55D5994A1AA5760300F9AA29 /* BigInteger-MacOSX Framework Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		55D599441AA562DD00F9AA29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55D599491AA5760300F9AA29 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -485,7 +561,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55D599471AA5760300F9AA29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55D599501AA5760300F9AA29 /* BigInteger_MacOSX_Framework_Tests.m in Sources */,
+				55D599581AA5786900F9AA29 /* BISwiftTesting.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55D599531AA5760300F9AA29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55D5992C1AA560CE00F9AA29 /* BigInteger-MacOSX Framework */;
+			targetProxy = 55D599521AA5760300F9AA29 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5050C7E116D50359009B4D06 /* Debug */ = {
@@ -656,6 +749,70 @@
 			};
 			name = Release;
 		};
+		55D599551AA5760300F9AA29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "BigInteger-MacOSX Framework Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		55D599561AA5760300F9AA29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "BigInteger-MacOSX Framework Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -712,6 +869,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		55D599541AA5760300F9AA29 /* Build configuration list for PBXNativeTarget "BigInteger-MacOSX Framework Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55D599551AA5760300F9AA29 /* Debug */,
+				55D599561AA5760300F9AA29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
