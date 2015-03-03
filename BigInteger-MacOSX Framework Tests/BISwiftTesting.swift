@@ -32,5 +32,11 @@ class BISwiftTesting: XCTestCase {
 		bj = BigInteger(string: "0", radix: 10)
 		
 		XCTAssert(bi!.description == "00")
+		
+		let bii = BigInteger(int32: 5)
+		let bij = BigInteger(int32: -5)
+		
+		XCTAssert(bii == -bij)
+		
 	}
 }
