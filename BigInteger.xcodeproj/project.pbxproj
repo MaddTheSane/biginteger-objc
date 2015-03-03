@@ -63,6 +63,21 @@
 		5088188616EA7F950071AE16 /* euclide.m in Sources */ = {isa = PBXBuildFile; fileRef = 507582C716E112460029EA54 /* euclide.m */; };
 		5088188816EA7F990071AE16 /* BigInteger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5050C7EA16D50414009B4D06 /* BigInteger.m */; };
 		5088188916EA7FB10071AE16 /* BigInteger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5050C7E916D50414009B4D06 /* BigInteger.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		55D5992E1AA560CE00F9AA29 /* init.m in Sources */ = {isa = PBXBuildFile; fileRef = 5050C7E716D50414009B4D06 /* init.m */; };
+		55D5992F1AA560CE00F9AA29 /* compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 5075827E16D650220029EA54 /* compare.m */; };
+		55D599301AA560CE00F9AA29 /* addsub.m in Sources */ = {isa = PBXBuildFile; fileRef = 5075828616DB90410029EA54 /* addsub.m */; };
+		55D599311AA560CE00F9AA29 /* multiply.m in Sources */ = {isa = PBXBuildFile; fileRef = 5075828016D68A430029EA54 /* multiply.m */; };
+		55D599321AA560CE00F9AA29 /* divide.m in Sources */ = {isa = PBXBuildFile; fileRef = 5050C7E616D50414009B4D06 /* divide.m */; };
+		55D599331AA560CE00F9AA29 /* exp.m in Sources */ = {isa = PBXBuildFile; fileRef = 5075828216DAA9990029EA54 /* exp.m */; };
+		55D599341AA560CE00F9AA29 /* log.m in Sources */ = {isa = PBXBuildFile; fileRef = 5088186516E7DA0E0071AE16 /* log.m */; };
+		55D599351AA560CE00F9AA29 /* shift.m in Sources */ = {isa = PBXBuildFile; fileRef = 507582C416DF865F0029EA54 /* shift.m */; };
+		55D599361AA560CE00F9AA29 /* prime.m in Sources */ = {isa = PBXBuildFile; fileRef = 5075828416DB76800029EA54 /* prime.m */; };
+		55D599371AA560CE00F9AA29 /* euclide.m in Sources */ = {isa = PBXBuildFile; fileRef = 507582C716E112460029EA54 /* euclide.m */; };
+		55D599381AA560CE00F9AA29 /* BigInteger.m in Sources */ = {isa = PBXBuildFile; fileRef = 5050C7EA16D50414009B4D06 /* BigInteger.m */; };
+		55D599391AA560CE00F9AA29 /* bitwise.m in Sources */ = {isa = PBXBuildFile; fileRef = 502F597E18DB26B800373887 /* bitwise.m */; };
+		55D5993B1AA560CE00F9AA29 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5088186E16EA7BC90071AE16 /* Cocoa.framework */; };
+		55D5993D1AA560CE00F9AA29 /* BigInteger.h in Headers */ = {isa = PBXBuildFile; fileRef = 5050C7E916D50414009B4D06 /* BigInteger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55D599421AA561BF00F9AA29 /* private.h in Headers */ = {isa = PBXBuildFile; fileRef = 5050C7E816D50414009B4D06 /* private.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -112,6 +127,8 @@
 		5088187116EA7BC90071AE16 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		5088187216EA7BC90071AE16 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		5088187316EA7BC90071AE16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		55D599411AA560CE00F9AA29 /* BigInteger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BigInteger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D599431AA561E900F9AA29 /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Property List.plist"; path = "Resources/Property List.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +156,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55D5993A1AA560CE00F9AA29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55D5993B1AA560CE00F9AA29 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -157,6 +182,7 @@
 				5050C7D716D50359009B4D06 /* BigInteger */,
 				5075828C16DB99B10029EA54 /* libBigInteger-iOS.a */,
 				5088186D16EA7BC90071AE16 /* libBigInteger-MacOSX.a */,
+				55D599411AA560CE00F9AA29 /* BigInteger.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,6 +203,7 @@
 			children = (
 				5050C7DD16D50359009B4D06 /* main.m */,
 				5050C7EE16D5041B009B4D06 /* Library */,
+				55D599431AA561E900F9AA29 /* Property List.plist */,
 			);
 			path = BigInteger;
 			sourceTree = "<group>";
@@ -239,6 +266,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		55D5993C1AA560CE00F9AA29 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55D599421AA561BF00F9AA29 /* private.h in Headers */,
+				55D5993D1AA560CE00F9AA29 /* BigInteger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -293,6 +329,24 @@
 			productReference = 5088186D16EA7BC90071AE16 /* libBigInteger-MacOSX.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		55D5992C1AA560CE00F9AA29 /* BigInteger-MacOSX Framework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55D5993E1AA560CE00F9AA29 /* Build configuration list for PBXNativeTarget "BigInteger-MacOSX Framework" */;
+			buildPhases = (
+				55D5992D1AA560CE00F9AA29 /* Sources */,
+				55D5993A1AA560CE00F9AA29 /* Frameworks */,
+				55D5993C1AA560CE00F9AA29 /* Headers */,
+				55D599441AA562DD00F9AA29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BigInteger-MacOSX Framework";
+			productName = "BigInteger-MacOSX";
+			productReference = 55D599411AA560CE00F9AA29 /* BigInteger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -318,9 +372,20 @@
 				5075828B16DB99B10029EA54 /* BigInteger-iOS */,
 				5088186C16EA7BC90071AE16 /* BigInteger-MacOSX */,
 				507582BF16DBC2550029EA54 /* UniLib */,
+				55D5992C1AA560CE00F9AA29 /* BigInteger-MacOSX Framework */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55D599441AA562DD00F9AA29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		507582C316DBC2860029EA54 /* ShellScript */ = {
@@ -394,6 +459,25 @@
 				5088188616EA7F950071AE16 /* euclide.m in Sources */,
 				5088188816EA7F990071AE16 /* BigInteger.m in Sources */,
 				502F598618DB4DDF00373887 /* bitwise.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55D5992D1AA560CE00F9AA29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55D5992E1AA560CE00F9AA29 /* init.m in Sources */,
+				55D5992F1AA560CE00F9AA29 /* compare.m in Sources */,
+				55D599301AA560CE00F9AA29 /* addsub.m in Sources */,
+				55D599311AA560CE00F9AA29 /* multiply.m in Sources */,
+				55D599321AA560CE00F9AA29 /* divide.m in Sources */,
+				55D599331AA560CE00F9AA29 /* exp.m in Sources */,
+				55D599341AA560CE00F9AA29 /* log.m in Sources */,
+				55D599351AA560CE00F9AA29 /* shift.m in Sources */,
+				55D599361AA560CE00F9AA29 /* prime.m in Sources */,
+				55D599371AA560CE00F9AA29 /* euclide.m in Sources */,
+				55D599381AA560CE00F9AA29 /* BigInteger.m in Sources */,
+				55D599391AA560CE00F9AA29 /* bitwise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +617,28 @@
 			};
 			name = Release;
 		};
+		55D5993F1AA560CE00F9AA29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				INFOPLIST_FILE = "BigInteger/Resources/Property List.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = BigInteger;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		55D599401AA560CE00F9AA29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				INFOPLIST_FILE = "BigInteger/Resources/Property List.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = BigInteger;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -577,6 +683,15 @@
 			buildConfigurations = (
 				5088187B16EA7BC90071AE16 /* Debug */,
 				5088187C16EA7BC90071AE16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55D5993E1AA560CE00F9AA29 /* Build configuration list for PBXNativeTarget "BigInteger-MacOSX Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55D5993F1AA560CE00F9AA29 /* Debug */,
+				55D599401AA560CE00F9AA29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

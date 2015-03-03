@@ -78,17 +78,17 @@ typedef struct _BIGINT
 	BIGINT bn;
 }
 
-- (id)initWithInt32:(int32_t)x;
-- (id)initWithUnsignedInt32:(uint32_t)x;
-- (id)initWithBigInteger:(BigInteger *)bigint;
-- (id)initWithString:(NSString *)num radix:(int)radix;
-- (id)initWithRandomNumberOfSize:(int)bitcount exact:(BOOL)exact;
+- (instancetype)initWithInt32:(int32_t)x;
+- (instancetype)initWithUnsignedInt32:(uint32_t)x;
+- (instancetype)initWithBigInteger:(BigInteger *)bigint;
+- (instancetype)initWithString:(NSString *)num radix:(int)radix;
+- (instancetype)initWithRandomNumberOfSize:(int)bitcount exact:(BOOL)exact;
 
-+ (BigInteger *)bigintWithInt32:(int32_t)x;
-+ (BigInteger *)bigintWithUnsignedInt32:(uint32_t)x;
-+ (BigInteger *)bigintWithBigInteger:(BigInteger *)bigint;
-+ (BigInteger *)bigintWithString:(NSString *)num radix:(int)radix;
-+ (BigInteger *)bigintWithRandomNumberOfSize:(int)bitcount exact:(BOOL)exact;
++ (instancetype)bigintWithInt32:(int32_t)x;
++ (instancetype)bigintWithUnsignedInt32:(uint32_t)x;
++ (instancetype)bigintWithBigInteger:(BigInteger *)bigint;
++ (instancetype)bigintWithString:(NSString *)num radix:(int)radix;
++ (instancetype)bigintWithRandomNumberOfSize:(int)bitcount exact:(BOOL)exact;
 
 - (NSString *)description;
 - (NSString *)toRadix:(int)radix;
@@ -102,35 +102,35 @@ typedef struct _BIGINT
 - (NSUInteger)hash;
 
 - (int)sign;
-- (BigInteger *)abs;
-- (BigInteger *)negate;
+- (instancetype)abs;
+- (instancetype)negate;
 - (BOOL)isEven;
 - (BOOL)isOdd;
 - (BOOL)isZero;
 
-- (BigInteger *)add:(BigInteger *)x;
-- (BigInteger *)sub:(BigInteger *)x;
-- (BigInteger *)multiply:(BigInteger *)mul;
-- (BigInteger *)multiply:(BigInteger *)mul modulo:(BigInteger *)mod;
-- (BigInteger *)divide:(BigInteger *)div;
-- (BigInteger *)divide:(BigInteger *)div remainder:(BigInteger **)rem;
-- (BigInteger *)exp:(uint32_t)exp;
-- (BigInteger *)exp:(BigInteger *)exp modulo:(BigInteger *)mod;
+- (instancetype)add:(BigInteger *)x;
+- (instancetype)sub:(BigInteger *)x;
+- (instancetype)multiply:(BigInteger *)mul;
+- (instancetype)multiply:(BigInteger *)mul modulo:(BigInteger *)mod;
+- (instancetype)divide:(BigInteger *)div;
+- (instancetype)divide:(BigInteger *)div remainder:(BigInteger **)rem;
+- (instancetype)exp:(uint32_t)exp;
+- (instancetype)exp:(BigInteger *)exp modulo:(BigInteger *)mod;
 
-- (BigInteger *)shiftLeft:(int)count;
-- (BigInteger *)shiftRight:(int)count;
+- (instancetype)shiftLeft:(int)count;
+- (instancetype)shiftRight:(int)count;
 
 - (int)bitCount;
-- (BigInteger *)bitwiseNotUsingWidth:(int)count;
-- (BigInteger *)bitwiseAnd:(BigInteger *)x;
-- (BigInteger *)bitwiseOr:(BigInteger *)x;
-- (BigInteger *)bitwiseXor:(BigInteger *)x;
+- (instancetype)bitwiseNotUsingWidth:(int)count;
+- (instancetype)bitwiseAnd:(BigInteger *)x;
+- (instancetype)bitwiseOr:(BigInteger *)x;
+- (instancetype)bitwiseXor:(BigInteger *)x;
 
-- (BigInteger *)greatestCommonDivisor:(BigInteger *)bigint;
-- (BigInteger *)inverseModulo:(BigInteger *)mod;
+- (instancetype)greatestCommonDivisor:(BigInteger *)bigint;
+- (instancetype)inverseModulo:(BigInteger *)mod;
 
 - (BOOL)isProbablePrime;
-- (BigInteger *)nextProbablePrime;
+- (instancetype)nextProbablePrime;
 
 @end
 
