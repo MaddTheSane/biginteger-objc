@@ -82,6 +82,7 @@
 		55D599501AA5760300F9AA29 /* BigInteger_MacOSX_Framework_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D5994F1AA5760300F9AA29 /* BigInteger_MacOSX_Framework_Tests.m */; };
 		55D599511AA5760300F9AA29 /* BigInteger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D599411AA560CE00F9AA29 /* BigInteger.framework */; };
 		55D599581AA5786900F9AA29 /* BISwiftTesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D599571AA5786900F9AA29 /* BISwiftTesting.swift */; };
+		55D5995A1AA5825000F9AA29 /* BIPowerOfTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D599591AA5825000F9AA29 /* BIPowerOfTwo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		55D5994E1AA5760300F9AA29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55D5994F1AA5760300F9AA29 /* BigInteger_MacOSX_Framework_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BigInteger_MacOSX_Framework_Tests.m; sourceTree = "<group>"; };
 		55D599571AA5786900F9AA29 /* BISwiftTesting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BISwiftTesting.swift; sourceTree = "<group>"; };
+		55D599591AA5825000F9AA29 /* BIPowerOfTwo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIPowerOfTwo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 			children = (
 				55D599571AA5786900F9AA29 /* BISwiftTesting.swift */,
 				55D5994F1AA5760300F9AA29 /* BigInteger_MacOSX_Framework_Tests.m */,
+				55D599591AA5825000F9AA29 /* BIPowerOfTwo.m */,
 				55D5994D1AA5760300F9AA29 /* Supporting Files */,
 			);
 			path = "BigInteger-MacOSX Framework Tests";
@@ -565,6 +568,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D5995A1AA5825000F9AA29 /* BIPowerOfTwo.m in Sources */,
 				55D599501AA5760300F9AA29 /* BigInteger_MacOSX_Framework_Tests.m in Sources */,
 				55D599581AA5786900F9AA29 /* BISwiftTesting.swift in Sources */,
 			);
@@ -644,6 +648,7 @@
 		5050C7E416D50359009B4D06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -651,6 +656,7 @@
 		5050C7E516D50359009B4D06 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

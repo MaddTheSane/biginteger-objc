@@ -78,7 +78,7 @@ public func <(lhs: BigInteger, rhs: BigInteger) -> Bool {
 }
 
 
-extension BigInteger: Comparable, IntegerLiteralConvertible, Printable /*, IntegerArithmeticType*/ {
+extension BigInteger: Comparable, IntegerLiteralConvertible, Printable, Hashable /*, IntegerArithmeticType*/ {
 	required public convenience init(integerLiteral value: IntegerLiteralType) {
 		self.init(int32: Int32(value))
 	}

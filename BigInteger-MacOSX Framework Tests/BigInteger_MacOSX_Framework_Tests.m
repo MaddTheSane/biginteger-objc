@@ -406,37 +406,6 @@
 	XCTAssert([[br toRadix:10] isEqualToString:@"115792089237316195423570985008687907852589419931798687112530834793049593217025"]);
 }
 
-#if 0
-//--------------------------------------------------------------
-// Tests the PowerOfTwo internal function.
-//--------------------------------------------------------------
-
-- (void)testPowerOfTwo
-{
-	BIGINT			bn, bm;
-	bigint_digit	d;
-	
-	bm.length = bm.alloc = 1;
-	bm.digits = &d;
-	d = 17;
-	
-	for (int i = 0; i < 31; i++)
-	{
-		bigint_init32(&bn, 1 << i, NO);
-		TAssert(bigint_is_power_of_two(&bn) == i);
-		bigint_shift_left(&bn, &bn, 79);
-		TAssert(bigint_is_power_of_two(&bn) == i + 79);
-		bigint_add_magnitude(&bn, &bn, &bm);
-		TAssert(bigint_is_power_of_two(&bn) == -1);
-		bigint_free(&bn);
-		
-		bigint_init32(&bn, (1 << i) + 13, NO);
-		TAssert(bigint_is_power_of_two(&bn) == -1);
-		bigint_free(&bn);
-	}
-}
-#endif
-
 //--------------------------------------------------------------
 // Tests the ShiftLeft and ShiftRight functions.
 //--------------------------------------------------------------
