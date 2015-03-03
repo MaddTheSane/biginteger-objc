@@ -87,8 +87,11 @@ extension BigInteger: Comparable, IntegerLiteralConvertible, Printable, Hashable
 		self.init(int32: Int32(value))
 	}
 	
+	override public var hashValue: Int {
+		return Int(hash)
+	}
+	
 	public class var allZeros: BigInteger {
 		return BigInteger(int32: 0)
 	}
-	//var allZeros: Self {
 }
