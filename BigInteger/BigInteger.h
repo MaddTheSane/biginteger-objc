@@ -55,66 +55,72 @@ typedef uint32_t			bigint_word;	// A double digit on a 32-bit architecture.
 #endif
 
 
+typedef NS_ENUM(int, BISign) {
+	BISignNegative = -1,
+	BISignNull = 0,
+	BISignPositive = 1
+};
+
 //--------------------------------------------------------------
 // The BigInteger class.
 //--------------------------------------------------------------
 
 @interface BigInteger : NSObject <NSCopying, NSCoding>
 
-- (instancetype)initWithInt32:(int32_t)x;
-- (instancetype)initWithUnsignedInt32:(uint32_t)x;
-- (instancetype)initWithBigInteger:(BigInteger *)bigint;
-- (instancetype)initWithString:(NSString *)num radix:(int)radix;
-- (instancetype)initWithRandomNumberOfSize:(int)bitcount exact:(BOOL)exact;
+- (nonnull instancetype)initWithInt32:(int32_t)x;
+- (nonnull instancetype)initWithUnsignedInt32:(uint32_t)x;
+- (nonnull instancetype)initWithBigInteger:(BigInteger * __nonnull)bigint;
+- (nullable instancetype)initWithString:(NSString * __nonnull)num radix:(int)radix;
+- (nonnull instancetype)initWithRandomNumberOfSize:(int)bitcount exact:(BOOL)exact;
 
-+ (instancetype)bigintWithInt32:(int32_t)x;
-+ (instancetype)bigintWithUnsignedInt32:(uint32_t)x;
-+ (instancetype)bigintWithBigInteger:(BigInteger *)bigint;
-+ (instancetype)bigintWithString:(NSString *)num radix:(int)radix;
-+ (instancetype)bigintWithRandomNumberOfSize:(int)bitcount exact:(BOOL)exact;
++ (nonnull instancetype)bigintWithInt32:(int32_t)x;
++ (nonnull instancetype)bigintWithUnsignedInt32:(uint32_t)x;
++ (nonnull instancetype)bigintWithBigInteger:(BigInteger * __nonnull)bigint;
++ (nullable instancetype)bigintWithString:(NSString * __nonnull)num radix:(int)radix;
++ (nonnull instancetype)bigintWithRandomNumberOfSize:(int)bitcount exact:(BOOL)exact;
 
-@property (readonly, copy) NSString *description;
-- (NSString *)toRadix:(int)radix;
-- (void)getBytes:(uint8_t *)bytes length:(int)length;
+@property (readonly, copy, nonnull) NSString *description;
+- (nullable NSString *)toRadix:(int)radix;
+- (void)getBytes:(uint8_t * __nonnull)bytes length:(int)length;
 @property (readonly) int32_t intValue;
 @property (readonly) int64_t longValue;
 @property (readonly) NSInteger integerValue;
 
-- (NSComparisonResult)compare:(BigInteger *)bigint;
-- (BOOL)isEqualToBigInteger:(BigInteger *)bigint;
-- (BOOL)isEqual:(id)object;
-- (NSUInteger)hash;
+- (NSComparisonResult)compare:(BigInteger * __nonnull)bigint;
+- (BOOL)isEqualToBigInteger:(BigInteger * __nonnull)bigint;
+- (BOOL)isEqual:(id __nullable)object;
+@property (readonly) NSUInteger hash;
 
-- (int)sign;
-- (instancetype)abs;
-- (instancetype)negate;
+@property (readonly) BISign sign;
+- (nonnull instancetype)abs;
+- (nonnull instancetype)negate;
 @property (readonly, getter=isEven) BOOL even;
 @property (readonly, getter=isOdd) BOOL odd;
 @property (readonly, getter=isZero) BOOL zero;
 
-- (instancetype)add:(BigInteger *)x;
-- (instancetype)sub:(BigInteger *)x;
-- (instancetype)multiply:(BigInteger *)mul;
-- (instancetype)multiply:(BigInteger *)mul modulo:(BigInteger *)mod;
-- (instancetype)divide:(BigInteger *)div;
-- (instancetype)divide:(BigInteger *)div remainder:(BigInteger **)rem;
-- (instancetype)exp:(uint32_t)exp;
-- (instancetype)exp:(BigInteger *)exp modulo:(BigInteger *)mod;
+- (nonnull instancetype)add:(BigInteger * __nonnull)x;
+- (nonnull instancetype)sub:(BigInteger * __nonnull)x;
+- (nonnull instancetype)multiply:(BigInteger * __nonnull)mul;
+- (nonnull instancetype)multiply:(BigInteger * __nonnull)mul modulo:(BigInteger * __nonnull)mod;
+- (nonnull instancetype)divide:(BigInteger * __nonnull)div;
+- (nonnull instancetype)divide:(BigInteger * __nonnull)div remainder:(BigInteger * __nonnull* __nullable)rem;
+- (nonnull instancetype)exp:(uint32_t)exp;
+- (nonnull instancetype)exp:(BigInteger * __nonnull)exp modulo:(BigInteger * __nonnull)mod;
 
-- (instancetype)shiftLeft:(int)count;
-- (instancetype)shiftRight:(int)count;
+- (nonnull instancetype)shiftLeft:(int)count;
+- (nonnull instancetype)shiftRight:(int)count;
 
 @property (readonly) int bitCount;
-- (instancetype)bitwiseNotUsingWidth:(int)count;
-- (instancetype)bitwiseAnd:(BigInteger *)x;
-- (instancetype)bitwiseOr:(BigInteger *)x;
-- (instancetype)bitwiseXor:(BigInteger *)x;
+- (nullable instancetype)bitwiseNotUsingWidth:(int)count;
+- (nonnull instancetype)bitwiseAnd:(BigInteger * __nonnull)x;
+- (nonnull instancetype)bitwiseOr:(BigInteger * __nonnull)x;
+- (nonnull instancetype)bitwiseXor:(BigInteger * __nonnull)x;
 
-- (instancetype)greatestCommonDivisor:(BigInteger *)bigint;
-- (instancetype)inverseModulo:(BigInteger *)mod;
+- (nullable instancetype)greatestCommonDivisor:(BigInteger * __nonnull)bigint;
+- (nonnull instancetype)inverseModulo:(BigInteger * __nonnull)mod;
 
 @property (readonly, getter=isProbablePrime) BOOL probablePrime;
-- (instancetype)nextProbablePrime;
+- (nonnull instancetype)nextProbablePrime;
 
 @end
 

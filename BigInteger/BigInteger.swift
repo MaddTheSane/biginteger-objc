@@ -63,6 +63,14 @@ public func |(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
 	return lhs.bitwiseOr(rhs)
 }
 
+public func ^(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
+	return lhs.bitwiseOr(rhs)
+	
+}
+
+public prefix func -(theVal: BigInteger) -> BigInteger {
+	return theVal.negate()
+}
 
 public func <(lhs: BigInteger, rhs: BigInteger) -> Bool {
 	let aComp = lhs.compare(rhs)

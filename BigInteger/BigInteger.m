@@ -567,8 +567,8 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 
 //--------------------------------------------------------------
 // Returns the 64- or 32-bit integer value of the receiver, if possible.
+// Which one is returned is based on the size of NSInteger
 // In case of overflow, raises an exception.
-// Which one is returned is based on the size of the NSInteger
 //--------------------------------------------------------------
 - (NSInteger)integerValue
 {
@@ -646,7 +646,7 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 // positive, and -1 if it is negative.
 //--------------------------------------------------------------
 
-- (int)sign
+- (BISign)sign
 {
 	return (bn.length != 0) ? ((bn.sign) ? -1 : +1) : 0;
 }
