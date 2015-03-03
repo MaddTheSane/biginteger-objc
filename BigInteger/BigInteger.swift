@@ -68,6 +68,10 @@ public func ^(lhs: BigInteger, rhs: BigInteger) -> BigInteger {
 	
 }
 
+public prefix func ~(x: BigInteger) -> BigInteger {
+	return x.bitwiseNotUsingWidth(x.bitCount)
+}
+
 public prefix func -(theVal: BigInteger) -> BigInteger {
 	return theVal.negate()
 }
@@ -78,8 +82,13 @@ public func <(lhs: BigInteger, rhs: BigInteger) -> Bool {
 }
 
 
-extension BigInteger: Comparable, IntegerLiteralConvertible, Printable, Hashable /*, IntegerArithmeticType*/ {
+extension BigInteger: Comparable, IntegerLiteralConvertible, Printable, Hashable /*BitwiseOperationsType, IntegerArithmeticType*/ {
 	required public convenience init(integerLiteral value: IntegerLiteralType) {
 		self.init(int32: Int32(value))
 	}
+	
+	public class var allZeros: BigInteger {
+		return BigInteger(int32: 0)
+	}
+	//var allZeros: Self {
 }

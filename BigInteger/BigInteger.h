@@ -111,7 +111,7 @@ typedef NS_ENUM(int, BISign) {
 - (nonnull instancetype)shiftRight:(int)count;
 
 @property (readonly) int bitCount;
-- (nullable instancetype)bitwiseNotUsingWidth:(int)count;
+- (nonnull instancetype)bitwiseNotUsingWidth:(int)count;
 - (nonnull instancetype)bitwiseAnd:(BigInteger * __nonnull)x;
 - (nonnull instancetype)bitwiseOr:(BigInteger * __nonnull)x;
 - (nonnull instancetype)bitwiseXor:(BigInteger * __nonnull)x;
