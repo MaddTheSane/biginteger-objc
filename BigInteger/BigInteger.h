@@ -24,12 +24,14 @@
 #ifndef BIG_INTEGER_H
 #define BIG_INTEGER_H
 
+#import <Foundation/Foundation.h>
+
 //--------------------------------------------------------------
 // Version number.
 //--------------------------------------------------------------
 
-#define BIGINT_VERSION			"1.2"
-#define BIGINT_VERNUM		   0x0102
+#define BIGINT_VERSION			"1.3"
+#define BIGINT_VERNUM		   0x0103
 
 //--------------------------------------------------------------
 // On 32 bits architectures, a digit is represented by a 16-bit
@@ -52,31 +54,12 @@ typedef uint32_t			bigint_word;	// A double digit on a 32-bit architecture.
 
 #endif
 
-//--------------------------------------------------------------
-// Structure internally used to handle big integers. The 32-bit
-// Mac OS X target requires ivars to be declared in the class
-// interface below, so we have to keep this in this public
-// file. It should move to private.h the day we drop this 32-bit
-// target.
-//--------------------------------------------------------------
-
-typedef struct _BIGINT
-{
-	BOOL			sign;					// Sign (NO = positive, YES = negative)
-	int				length;					// Number of digits actually used (i.e. log(n))
-	int				alloc;					// Number of allocated digits.
-	bigint_digit  * digits;					// Array of digits.
-}
-	BIGINT;
 
 //--------------------------------------------------------------
 // The BigInteger class.
 //--------------------------------------------------------------
 
 @interface BigInteger : NSObject <NSCopying, NSCoding>
-{
-	BIGINT bn;
-}
 
 - (instancetype)initWithInt32:(int32_t)x;
 - (instancetype)initWithUnsignedInt32:(uint32_t)x;
@@ -90,11 +73,12 @@ typedef struct _BIGINT
 + (instancetype)bigintWithString:(NSString *)num radix:(int)radix;
 + (instancetype)bigintWithRandomNumberOfSize:(int)bitcount exact:(BOOL)exact;
 
-- (NSString *)description;
+@property (readonly, copy) NSString *description;
 - (NSString *)toRadix:(int)radix;
 - (void)getBytes:(uint8_t *)bytes length:(int)length;
-- (int32_t)intValue;
-- (int64_t)longValue;
+@property (readonly) int32_t intValue;
+@property (readonly) int64_t longValue;
+@property (readonly) NSInteger integerValue;
 
 - (NSComparisonResult)compare:(BigInteger *)bigint;
 - (BOOL)isEqualToBigInteger:(BigInteger *)bigint;
@@ -104,9 +88,9 @@ typedef struct _BIGINT
 - (int)sign;
 - (instancetype)abs;
 - (instancetype)negate;
-- (BOOL)isEven;
-- (BOOL)isOdd;
-- (BOOL)isZero;
+@property (readonly, getter=isEven) BOOL even;
+@property (readonly, getter=isOdd) BOOL odd;
+@property (readonly, getter=isZero) BOOL zero;
 
 - (instancetype)add:(BigInteger *)x;
 - (instancetype)sub:(BigInteger *)x;
@@ -120,7 +104,7 @@ typedef struct _BIGINT
 - (instancetype)shiftLeft:(int)count;
 - (instancetype)shiftRight:(int)count;
 
-- (int)bitCount;
+@property (readonly) int bitCount;
 - (instancetype)bitwiseNotUsingWidth:(int)count;
 - (instancetype)bitwiseAnd:(BigInteger *)x;
 - (instancetype)bitwiseOr:(BigInteger *)x;
@@ -129,7 +113,7 @@ typedef struct _BIGINT
 - (instancetype)greatestCommonDivisor:(BigInteger *)bigint;
 - (instancetype)inverseModulo:(BigInteger *)mod;
 
-- (BOOL)isProbablePrime;
+@property (readonly, getter=isProbablePrime) BOOL probablePrime;
 - (instancetype)nextProbablePrime;
 
 @end

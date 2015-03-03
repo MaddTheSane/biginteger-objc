@@ -63,7 +63,9 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 //========================================================================
 
 @implementation BigInteger
-
+{
+	BIGINT bn;
+}
 //--------------------------------------------------------------
 // Initializes a BigInteger with a signed 32-bit integer.
 //--------------------------------------------------------------
@@ -561,6 +563,20 @@ static NSString * const excKeyedArchiverOnly	= @"Only keyed archivers are suppor
 	if (bn.sign && r != INT64_MIN) r = -r;
 
 	return r;
+}
+
+//--------------------------------------------------------------
+// Returns the 64- or 32-bit integer value of the receiver, if possible.
+// In case of overflow, raises an exception.
+// Which one is returned is based on the size of the NSInteger
+//--------------------------------------------------------------
+- (NSInteger)integerValue
+{
+#if __LP64__
+	return [self longValue];
+#else
+	return [self intValue];
+#endif
 }
 
 //--------------------------------------------------------------

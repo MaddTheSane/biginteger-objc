@@ -24,6 +24,25 @@
 #ifndef PRIVATE_H
 #define PRIVATE_H
 
+
+//--------------------------------------------------------------
+// Structure internally used to handle big integers. The 32-bit
+// Mac OS X target requires ivars to be declared in the class
+// interface below, so we have to keep this in this public
+// file. It should move to private.h the day we drop this 32-bit
+// target.
+//--------------------------------------------------------------
+
+typedef struct _BIGINT
+{
+	BOOL			sign;					// Sign (NO = positive, YES = negative)
+	int				length;					// Number of digits actually used (i.e. log(n))
+	int				alloc;					// Number of allocated digits.
+	bigint_digit  * digits;					// Array of digits.
+}
+BIGINT;
+
+
 //--------------------------------------------------------------
 // Allocation / deallocation functions.
 //--------------------------------------------------------------

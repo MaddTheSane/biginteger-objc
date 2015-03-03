@@ -15,12 +15,12 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.2</string>
+	<string>1.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.2</string>
+	<string>1.3</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015 Æquans. All rights reserved.</string>
+	<string>Copyright © 2012 - 2015 Pascal Levy. All rights reserved.</string>
 </dict>
 </plist>
